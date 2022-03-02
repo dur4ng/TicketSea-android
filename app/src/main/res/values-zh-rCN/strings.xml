@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TicketSea</string>
+    <string name="hello_blank_fragment">你好空片段</string>
+    <string name="btInfoEvent">打开</string>
+    <string name="tvdeadline">最后期限</string>
+    <string name="tiename_of_the_event">活动名称</string>
+    <string name="tieDescription">描述</string>
+    <string name="tie_commission_rate">佣金百分比</string>
+    <string name="bt_add_picture">添加图片</string>
+    <string name="bt_create_event">创建事件</string>
+    <string name="bt_add_ticket">添加票</string>
+    <string name="tv_cof_ref">参考代码</string>
+    <string name="tv_price">价钱</string>
+    <string name="tv_add_picture">添加图片</string>
+    <string name="tie_reference_code">参考代码</string>
+    <string name="tie_price">价钱</string>
+    <string name="bt_buy">购买</string>
+    <string name="bt_sell">卖</string>
+    <string name="tv_sales">销售量</string>
+    <string name="tv_purchases">购物</string>
+    <string name="bt_info">信息</string>
+    <string name="tvTicketOperationHeader">票务操作</string>
+    <string name="btBuy">购买</string>
+    <string name="btSell">卖</string>
+    <string name="tieCount">数字</string>
+    <string name="tiePrice">价钱</string>
+    <string name="tvCreateEvent">创建事件</string>
+    <string name="tieCountTickets">数字</string>
+    <string name="btEditTicketLot">编辑</string>
+    <string name="tvAboutUsHeader">投资组合账户</string>
+    <string name="tvCreateTicketHeader">创建票证</string>
+    <string name="tvEventInfoHeader">活动信息</string>
+    <string name="tvLiveEventsHeader">现在发生的事</string>
+    <string name="tvTicketInfoHeader">票务信息</string>
+</resources>

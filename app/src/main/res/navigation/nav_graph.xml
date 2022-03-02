@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bottomNavigationFragment">
+    <fragment
+        android:id="@+id/showCurrentEventsFragment2"
+        android:name="com.dur4n.ticketsea.ui.event.ShowCurrentEventsFragment"
+        android:label="fragment_show_current_events"
+        tools:layout="@layout/fragment_show_current_events" >
+        <action
+            android:id="@+id/action_showCurrentEventsFragment2_to_infoEventFragment"
+            app:destination="@id/infoEventFragment" />
+        <action
+            android:id="@+id/action_showCurrentEventsFragment2_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_showCurrentEventsFragment2_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoEventFragment"
+        android:name="com.dur4n.ticketsea.ui.infoEvent.InfoEventFragment"
+        android:label="fragment_info_event"
+        tools:layout="@layout/fragment_info_event" >
+        <action
+            android:id="@+id/action_infoEventFragment_to_ticketOperationFragment"
+            app:destination="@id/ticketOperationFragment" />
+        <action
+            android:id="@+id/action_infoEventFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.dur4n.ticketsea.ui.createEvent.CreateEventFragment"
+        android:label="fragment_create_event"
+        tools:layout="@layout/fragment_create_event" >
+        <action
+            android:id="@+id/action_createEventFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_createEventFragment_to_showCurrentEventsFragment2"
+            app:destination="@id/showCurrentEventsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketFragment"
+        android:name="com.dur4n.ticketsea.ui.createTicket.CreateTicketFragment"
+        android:label="fragment_create_ticket"
+        tools:layout="@layout/fragment_create_ticket" >
+        <action
+            android:id="@+id/action_createTicketFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+        <argument
+            android:name="ticket"
+            app:argType="com.dur4n.ticketsea.data.model.Ticket"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_createTicketFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment" />
+        <argument
+            android:name="eventManage"
+            app:argType="boolean" />
+        <argument
+            android:name="event"
+            app:argType="com.dur4n.ticketsea.data.model.Event" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.dur4n.ticketsea.ui.about.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_to_ticketInfoFragment"
+            app:destination="@id/ticketInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketInfoFragment"
+        android:name="com.dur4n.ticketsea.ui.ticketInfo.TicketInfoFragment"
+        android:label="fragment_ticket_info"
+        tools:layout="@layout/fragment_ticket_info" >
+        <action
+            android:id="@+id/action_ticketInfoFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketOperationFragment"
+        android:name="com.dur4n.ticketsea.ui.ticketsOperations.TicketOperationFragment"
+        android:label="fragment_ticket_operation"
+        tools:layout="@layout/fragment_ticket_operation" />
+    <fragment
+        android:id="@+id/bottomNavigationFragment"
+        android:name="com.dur4n.ticketsea.ui.BottomNavigationFragment"
+        android:label="fragment_bottom_navigation"
+        tools:layout="@layout/fragment_bottom_navigation" >
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_infoEventFragment"
+            app:destination="@id/infoEventFragment" />
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_ticketInfoFragment"
+            app:destination="@id/ticketInfoFragment" />
+        <argument
+            android:name="childFragmentFlag"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_aboutUsFragment2"
+            app:destination="@id/aboutUsFragment2" />
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_languagesFragment"
+            app:destination="@id/languagesFragment" />
+        <argument
+            android:name="event"
+            app:argType="com.dur4n.ticketsea.data.model.Event"
+            app:nullable="true" />
+        <argument
+            android:name="eventManage"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.dur4n.ticketsea.ui.preferences.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment2"
+        android:name="com.dur4n.ticketsea.ui.preferences.aboutUs.AboutUsFragment"
+        android:label="AboutUsFragment" />
+    <fragment
+        android:id="@+id/languagesFragment"
+        android:name="com.dur4n.ticketsea.ui.preferences.languages.LanguagesFragment"
+        android:label="fragment_languages"
+        tools:layout="@layout/fragment_languages" />
+</navigation>

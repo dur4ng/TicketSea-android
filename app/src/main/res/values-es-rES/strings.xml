@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TicketSea</string>
+    <string name="hello_blank_fragment">Hola Fragment vacío</string>
+    <string name="btInfoEvent">Abrir</string>
+    <string name="tvdeadline">Fecha Límite</string>
+    <string name="tiename_of_the_event">Nombre del Evento</string>
+    <string name="tieDescription">Descripción</string>
+    <string name="tie_commission_rate">Porcentaje de Comisión</string>
+    <string name="bt_add_picture">Añadir Imagen</string>
+    <string name="bt_create_event">Crear Evento</string>
+    <string name="bt_add_ticket">Añadir Ticket</string>
+    <string name="tv_cof_ref">Código de Referencia</string>
+    <string name="tv_price">Precio</string>
+    <string name="tv_add_picture">Añadir Imagen</string>
+    <string name="tie_reference_code">Código de Referencia</string>
+    <string name="tie_price">Precio</string>
+    <string name="bt_buy">Comprar</string>
+    <string name="bt_sell">Vender</string>
+    <string name="tv_sales">Ventas</string>
+    <string name="tv_purchases">Compras</string>
+    <string name="bt_info">Información</string>
+    <string name="tvTicketOperationHeader">Operación Ticket</string>
+    <string name="btBuy">Comprar</string>
+    <string name="btSell">Vender</string>
+    <string name="tieCount">Número</string>
+    <string name="tiePrice">Precio</string>
+    <string name="tvCreateEvent">Crear Evento</string>
+    <string name="tieCountTickets">Número</string>
+    <string name="btEditTicketLot">Editar</string>
+    <string name="tvAboutUsHeader">Porfolio Cuenta</string>
+    <string name="tvCreateTicketHeader">Crear Ticket</string>
+    <string name="tvEventInfoHeader">Información Evento</string>
+    <string name="tvLiveEventsHeader">Eventos Actuales</string>
+    <string name="tvTicketInfoHeader">Información Ticket</string>
+</resources>

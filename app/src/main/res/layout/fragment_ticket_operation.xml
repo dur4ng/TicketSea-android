@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ticketsOperations.TicketOperationFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="60dp" />
+
+    <TextView
+        android:id="@+id/tvTicketOperationHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvTicketOperationHeader"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEventName"
+        android:layout_width="195dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:text="Real Madrid vs Barca"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvTicketOperationHeader" />
+
+    <Button
+        android:id="@+id/btBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btBuy"
+        android:backgroundTint="@color/green"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tilPriceTickets" />
+
+    <Button
+        android:id="@+id/btSell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/btSell"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toEndOf="@+id/btBuy"
+        app:layout_constraintTop_toBottomOf="@+id/tilPriceTickets" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="199dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="20dp"
+        android:text="Operations with Real Madrid vs Barca tickets"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvEventName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCountTickets"
+        android:layout_width="286dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/tieCountTickets"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/tieCount" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPriceTickets"
+        android:layout_width="288dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tilCountTickets">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/tieCountTickets"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/tiePrice" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.infoEvent.InfoEventFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPurchaseOrder"
+        android:layout_width="84dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvPurchaseOrder" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSaleOrder"
+        android:layout_width="84dp"
+        android:layout_height="202dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/rvPurchaseOrder"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaleOrder" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="350dp" />
+
+    <Button
+        android:id="@+id/btBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/bt_buy"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/rvPurchaseOrder" />
+
+    <Button
+        android:id="@+id/btSell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/bt_sell"
+
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintTop_toBottomOf="@+id/rvSaleOrder" />
+
+    <Button
+        android:id="@+id/btOwnerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Address:0x2d..."
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvEventDescription" />
+
+    <TextView
+        android:id="@+id/tvEventDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Real Madrid vs Barcelona \n Fecha: 27/10/21 \n Estadio Santiago Bernabeu"
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvEventInfoHeader" />
+
+    <TextView
+        android:id="@+id/tvPurchaseOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/tv_purchases"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btOwnerAddress" />
+
+    <TextView
+        android:id="@+id/tvSaleOrder"
+        android:layout_width="62dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/tv_sales"
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintTop_toBottomOf="@+id/btOwnerAddress" />
+
+    <TextView
+        android:id="@+id/tvEventInfoHeader"
+        android:layout_width="206dp"
+        android:layout_height="66dp"
+        android:textSize="30dp"
+        android:text="@string/tvEventInfoHeader"
+        app:layout_constraintEnd_toStartOf="@+id/glRight"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_events"  android:title="Events" android:icon="@drawable/ic_action_events"></item>
+    <item android:id="@+id/action_create_event"  android:title="Create Event" android:icon="@drawable/ic_action_create_event"></item>
+    <item android:id="@+id/action_user_porfolio"  android:title="Porfolio" android:icon="@drawable/ic_action_wallet"></item>
+    <item android:id="@+id/action_preferences"  android:title="preferences" android:icon="@drawable/ic_action_preferences"></item>
+</menu>

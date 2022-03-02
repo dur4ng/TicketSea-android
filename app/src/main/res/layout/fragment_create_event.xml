@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.dur4n.ticketsea.data.model.Event" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.createEvent.CreateEventFragment">
+                <!-- -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="60dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glRightl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="60dp"  />
+
+                <TextView
+                    android:id="@+id/tvDeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="116dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorSecondary"
+                    android:text="@string/tvdeadline"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tilDescription" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilName"
+                    android:layout_width="@dimen/tilBig"
+                    android:layout_height="@dimen/tilLayoutHeight"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="52dp"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCreateEventHeader">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tieName"
+                        style="@style/tieCountTickets"
+                        android:layout_width="279dp"
+                        android:layout_height="match_parent"
+                        android:hint="@string/tiename_of_the_event"
+                        android:textSize="@dimen/tieSmall"
+                        android:text="@{event.nombre}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDescription"
+                    android:layout_width="@dimen/tilBig"
+                    android:layout_height="81dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tilCommssion">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tieDescription"
+                        style="@style/tieCountTickets"
+                        android:layout_width="278dp"
+                        android:layout_height="match_parent"
+                        android:hint="@string/tieDescription"
+                        android:textSize="@dimen/tieSmall"
+                        android:text="@{event.description}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCommssion"
+                    android:layout_width="@dimen/tilBig"
+                    android:layout_height="@dimen/tilLayoutHeight"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="52dp"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintHorizontal_bias="0.018"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tilName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tieCommission"
+                        style="@style/tieCountTickets"
+                        android:layout_width="279dp"
+                        android:layout_height="match_parent"
+                        android:hint="@string/tie_commission_rate"
+                        android:textSize="@dimen/tieSmall"
+                        android:text="@{event.comission.toString()}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btAddPicture"
+                    android:layout_width="@dimen/btSmallWidth"
+                    android:layout_height="@dimen/btSmallHeight"
+                    android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:text="@string/bt_add_picture"
+                    android:textSize="@dimen/btSmall"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/btAddTicketLot" />
+
+                <Button
+                    android:id="@+id/btCreateEvent"
+                    android:layout_width="139dp"
+                    android:layout_height="34dp"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:text="@string/bt_create_event"
+                    android:textSize="@dimen/btSmall"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintTop_toBottomOf="@+id/rvTickets"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <CalendarView
+                    android:id="@+id/cvDeadline"
+                    android:layout_width="286dp"
+                    android:layout_height="295dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="36dp"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeadline"
+                    android:date="@{event.date}"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTickets"
+                    android:layout_width="217dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/btAddTicketLot"
+                    app:layout_constraintTop_toBottomOf="@+id/cvDeadline" />
+
+                <Button
+                    android:id="@+id/btAddTicketLot"
+                    android:layout_width="@dimen/btSmallWidth"
+                    android:layout_height="@dimen/btSmallHeight"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/bt_add_ticket"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:textSize="@dimen/btSmall"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/cvDeadline" />
+
+                <TextView
+                    android:id="@+id/tvCreateEventHeader"
+                    android:layout_width="210dp"
+                    android:layout_height="48dp"
+                    android:textColor="@color/colorSecondary"
+                    android:text="@string/tvCreateEvent"
+                    android:textSize="@dimen/tvSizeHeader"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightl"
+                    app:layout_constraintStart_toStartOf="@+id/glLeft"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.createTicket.CreateTicketFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="60dp" />
+
+    <Button
+        android:id="@+id/btAddPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/tv_add_picture"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tilCount" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilReferenceCode"
+        android:layout_width="210dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreateTicketHeader"
+        app:startIconDrawable="@drawable/ic_action_reference">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieRefereceCode"
+            style="@style/tieCountTickets"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/tie_reference_code" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPrice"
+        android:layout_width="208dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tilReferenceCode"
+        app:startIconDrawable="@drawable/ic_action_price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiePrice"
+            style="@style/tieCountTickets"
+            android:layout_width="197dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/tie_price" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCount"
+        android:layout_width="208dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tilReferenceCode"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieCount"
+            style="@style/tieCountTickets"
+            android:layout_width="197dp"
+            android:layout_height="wrap_content"
+            android:hint="Count" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btAddTicket"
+        android:layout_width="202dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="148dp"
+        android:text="@string/bt_add_ticket"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btAddPicture" />
+
+    <TextView
+        android:id="@+id/tvCreateTicketHeader"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:textSize="30dp"
+        android:text="@string/tvCreateTicketHeader"
+        app:layout_constraintEnd_toStartOf="@+id/glRightl"
+        app:layout_constraintStart_toStartOf="@+id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

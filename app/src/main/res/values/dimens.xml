@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="tvSizeHeader">30sp</dimen>
+    <dimen name="btSmall">8sp</dimen>
+    <dimen name="tieSmall">8sp</dimen>
+    <dimen name="tilBig">291dp</dimen>
+    <dimen name="tilLayoutHeight">50dp</dimen>
+    <dimen name="btSmallWidth">65dp</dimen>
+    <dimen name="btSmallHeight">42dp</dimen>
+    <dimen name="tvSignUpTitle">20dp</dimen>
+</resources>

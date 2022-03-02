@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">TicketSea</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btInfoEvent">OPEN</string>
+    <string name="tvdeadline">Deadline</string>
+    <string name="tiename_of_the_event">Name of the Event</string>
+    <string name="tieDescription">Description</string>
+    <string name="tie_commission_rate">Commission Rate</string>
+    <string name="bt_add_picture">Add Picture</string>
+    <string name="bt_create_event">Create Event</string>
+    <string name="bt_add_ticket">Add Ticket</string>
+    <string name="tv_cof_ref">Cof. Ref</string>
+    <string name="tv_price">Price</string>
+    <string name="tv_add_picture">Add picture</string>
+    <string name="tie_reference_code">Reference Code</string>
+    <string name="tie_price">Price</string>
+    <string name="bt_buy">Buy</string>
+    <string name="bt_sell">Sell</string>
+    <string name="tv_purchases">Purchases</string>
+    <string name="tv_sales">Sales</string>
+    <string name="bt_info">Real Madrid vs Barca</string>
+    <string name="tvTicketOperationHeader">Ticket Operation</string>
+    <string name="btBuy">BUY</string>
+    <string name="btSell">SELL</string>
+    <string name="tieCount">Count</string>
+    <string name="tiePrice">Price</string>
+    <string name="tvCreateEvent">Create Event</string>
+    <string name="tieCountTickets">number</string>
+    <string name="btEditTicketLot">Edit</string>
+    <string name="tvAboutUsHeader">Address Porfolio</string>
+    <string name="tvCreateTicketHeader">Create Ticket</string>
+    <string name="tvEventInfoHeader">Event Info</string>
+    <string name="tvLiveEventsHeader">Live Events</string>
+    <string name="tvTicketInfoHeader">Ticket Info</string>
+    <string name="txtLanguage">Language</string>
+    <string name="txtAboutUs">About Us</string>
+    <string name="txtSpanish">Spanish</string>
+    <string name="txtEnglish">English</string>
+    <string name="eventNotification">Event Notification</string>
+    <string name="ticketCreated">Ticket prototype created</string>
+    <string name="tvTileSingUp">Sign In</string>
+    <string name="btRegister">Sign Up</string>
+    <string name="edUsername">Username</string>
+    <string name="edPassword">Password</string>
+    <string name="btnSignin">SignIn</string>
+</resources>

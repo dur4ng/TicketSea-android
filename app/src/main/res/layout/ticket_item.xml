@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="30dp">
+
+    <ImageView
+        android:id="@+id/ivLogoEventLot"
+        android:layout_width="45dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="5dp" />
+
+
+    <Button
+        android:id="@+id/btEditTicketLot"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:text="@string/bt_info"
+        android:textSize="6sp" />
+
+    <TextView
+        android:id="@+id/tvCodRef"
+        android:layout_width="60dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="5dp"
+        android:text="FC03D" />
+
+</LinearLayout>

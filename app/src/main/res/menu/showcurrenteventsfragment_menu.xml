@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_order_event"
+        android:title="Order Event A-Z"></item>
+    <item
+        android:id="@+id/action_order_eventReverse"
+        android:title="Order Event Z-A"></item>
+</menu>
