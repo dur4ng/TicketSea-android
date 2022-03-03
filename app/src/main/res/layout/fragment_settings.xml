@@ -18,4 +18,25 @@
         android:layout_height="wrap_content"
         android:text="@string/txtAboutUs" />
 
+    <Button
+        android:id="@+id/btnExportTicketsJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Tickets to Json" />
+    <Button
+        android:id="@+id/btnExportTicketsCSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Tickets to CSV" />
+    <Button
+        android:id="@+id/btnExportTicketsXML"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Tickets to XML" />
+    <Button
+        android:id="@+id/btnExportTicketsQR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Tickets to QR" />
+
 </LinearLayout>

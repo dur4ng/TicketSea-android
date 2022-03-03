@@ -201,7 +201,7 @@ Version navega a información del evento
         //NavHostFragment.findNavController(ShowCurrentEventsFragment.this).navigate(action);
         BottomNavigationFragmentDirections.ActionBottomNavigationFragmentToCreateTicketFragment action1 = BottomNavigationFragmentDirections.actionBottomNavigationFragmentToCreateTicketFragment(null, true, event);
         NavHostFragment.findNavController(ShowCurrentEventsFragment.this).navigate(action1);
-        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action2 = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event,true);
+        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action2 = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event,true, "eventItemView");
         NavHostFragment.findNavController(ShowCurrentEventsFragment.this).navigate(action2);
     }
 }

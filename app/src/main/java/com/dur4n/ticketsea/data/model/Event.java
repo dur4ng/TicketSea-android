@@ -76,6 +76,8 @@ public class Event implements Serializable , Comparable{
         this.comission = comission;
     }
 
+    @Ignore
+    public Event(){}
     public String getNombre() {
         return nombre;
     }

@@ -1,5 +1,7 @@
 package com.dur4n.ticketsea.data.repository.ticket;
 
+import androidx.loader.content.Loader;
+
 import com.dur4n.ticketsea.data.dao.EventDAO;
 import com.dur4n.ticketsea.data.dao.TicketDAO;
 import com.dur4n.ticketsea.data.model.Event;
@@ -9,9 +11,11 @@ import com.dur4n.ticketsea.data.room.LocalDB;
 import com.dur4n.ticketsea.ui.createEvent.CreateEventContract;
 import com.dur4n.ticketsea.ui.createTicket.CreateTicketContract;
 import com.dur4n.ticketsea.ui.event.ShowCurrentEventsContract;
+import com.dur4n.ticketsea.ui.preferences.settings.SettingsContract;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class TicketLocalRepository implements CreateTicketContract.Repository{

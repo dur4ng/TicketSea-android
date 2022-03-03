@@ -75,7 +75,7 @@ public class EventLocalRepository implements ShowCurrentEventsContract.Repositor
     public void create(CreateEventContract.OnEventCallBack callBack, Event event) {
 
         // name event empty
-        if(event.getNombre().equals("")){
+        if(event.getNombre() == null){
             callBack.onEventNameEmpty("need a valid name");
             return;
         }
@@ -159,7 +159,7 @@ public class EventLocalRepository implements ShowCurrentEventsContract.Repositor
     @Override
     public void update(CreateEventContract.OnInteractorListener listener, Event event) {
         //Borrar evento
-        LocalDB.databaseWriteExecutor.submit(()->eventDAO.deleteEventByEventName(event.getNombre()));
+
         //Create new event
 
         //build new event for update it
@@ -171,8 +171,92 @@ public class EventLocalRepository implements ShowCurrentEventsContract.Repositor
         }
         event.setTickets(hashMapTickets);
 
-        create(listener, event);
-        //
+        //create(listener, event);
+
+        // name event empty
+        if(event.getNombre() == null){
+            listener.onEventNameEmpty("need a valid name");
+            return;
+        }
+        // name event too long
+        if (event.getNombre().length() >= 15){
+            listener.onEventNameTooLong("need a valid name");
+            return;
+        }
+
+        // comission rate empty
+        if (event.getComission() == null){
+            listener.onEventComissionEmpty("Need a comission value");
+            return;
+        }
+        // mayor o igual a 100
+        if (event.getComission() >= 100){
+            listener.onEventComissionBig("Can't have a 100% of comission");
+            return;
+        }
+        //TODO no numérico \ this probably just need to do it in the view
+        //if (event.getComission())
+
+        // description empty
+        if (event.getDescription().equals("")){
+            listener.onEventDescriptionEmpty("Need a description");
+            return;
+        }
+        // too long
+        if (event.getDescription().length() >= 30){
+            listener.onEventDescriptionTooLong("Too long description");
+            return;
+        }
+
+        // date past date
+        if (event.getDate() > System.currentTimeMillis()){
+            listener.onEventDateOld("can't make a event in the past");
+            return;
+        }
+
+        // empty tickets
+        if(event.getTickets().size() <= 0){
+            listener.onEventTicketEmpty("A event need tickets");
+            return;
+        }
+
+        Event currentEvent = null;
+        try {
+            LocalDB.databaseWriteExecutor.submit(()->eventDAO.deleteEventByEventName(event.getNombre()));
+            LocalDB.databaseWriteExecutor.submit(()->eventDAO.insert(event)).get();
+            currentEvent = LocalDB.databaseWriteExecutor.submit(()->eventDAO.findByName(event.getNombre())).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        for (Map.Entry<String, Ticket> entry : event.getTickets().entrySet()) {
+            Ticket value = entry.getValue();
+            if(value.getCount() == null){
+                listener.onFailure("set the count of each prototype ticket");
+                return;
+            }else {
+                for (int i = 1; i<=value.getCount();i++){
+                    Ticket ticketToInsert = new Ticket();
+                    ticketToInsert.setEventId(currentEvent.id);
+                    ticketToInsert.setEventName(currentEvent.getNombre());
+                    ticketToInsert.setReferenceCode(value.getReferenceCode());
+                    ticketToInsert.setPrice(value.getPrice());
+                    ticketToInsert.setCount(value.getCount());
+
+                    // need create a ticket using the room constructor ticket
+                    TicketLocalRepository.getInstance().create(ticketToInsert);
+                }
+            }
+
+
+        }
+
+        listener.onCreateSuccess("event edited");
+
+
     }
 
     @Override

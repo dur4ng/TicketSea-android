@@ -57,4 +57,12 @@ dependencies {
 
     //About Us
     implementation 'com.github.jrvansuita:MaterialAbout:+'
+    implementation "androidx.core:core-ktx:+"
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    // QR generator
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
+
 }

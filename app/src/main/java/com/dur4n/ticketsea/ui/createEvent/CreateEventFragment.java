@@ -29,6 +29,7 @@ import com.dur4n.ticketsea.data.model.Ticket;
 import com.dur4n.ticketsea.data.repository.event.EventMockRepository;
 import com.dur4n.ticketsea.data.repository.ticket.TicketMockTMPRepository;
 import com.dur4n.ticketsea.databinding.FragmentCreateEventBinding;
+import com.dur4n.ticketsea.ui.BottomNavigationFragment;
 import com.dur4n.ticketsea.ui.BottomNavigationFragmentDirections;
 import com.dur4n.ticketsea.ui.about.AboutUsFragment;
 import com.dur4n.ticketsea.ui.infoEvent.PurchaseOrderAdapter;
@@ -51,6 +52,8 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
 
     static Event savedEvent;
 
+    static String origin;
+
     static Boolean eventManage;
 
     public static Fragment newInstance(Bundle o, Boolean flag) {
@@ -61,10 +64,11 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         eventManage = flag;
         return fragment;
     }
-    public static Fragment newInstanceWithEvent(Event event, Boolean flag) {
+    public static Fragment newInstanceWithEvent(Event event, Boolean flag, String originId) {
         CreateEventFragment fragment = new CreateEventFragment();
         fragment.currentEvent = event;
         eventManage = flag;
+        origin = BottomNavigationFragment.origin;
         return fragment;
     }
 
@@ -89,16 +93,18 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         if(eventManage){
             savedEvent = currentEvent;
             binding.tvCreateEventHeader.setText("Update Event");
+            binding.tieName.setError("Change name to clone event");
             binding.setEvent(savedEvent);
             // cargar rv tickets
-            TicketMockTMPRepository.getInstance().setListTicketsForUpdate(currentEvent.getNombre());
+            if(origin == "eventItemView")
+                TicketMockTMPRepository.getInstance().setListTicketsForUpdate(currentEvent.getNombre());
             //loadTicketOfEvent(currentEvent.getNombre());
             //ini edit
             binding.btCreateEvent.setOnClickListener(listener ->{
                 updateEvent();
             });
         }else{
-            if(savedEvent != null)
+            if(savedEvent != null && origin == "editTickets")
                 binding.setEvent(savedEvent);
             binding.tvCreateEventHeader.setText("Create Event");
             binding.btCreateEvent.setOnClickListener(listener -> {
@@ -122,6 +128,12 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 return false;
         }
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        savedEvent = null;
     }
 
     @Override
@@ -170,7 +182,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
 
         }catch (NumberFormatException e){
             binding.tieCommission.setError("need a valid comission");
-            return null;
+            return new Event();
         }
         String description = binding.tieDescription.getText().toString();
 
@@ -262,7 +274,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     public void editTicket(Ticket ticket) {
         //navigate con bundle
         savedEvent = getCurrentEvent();
-        BottomNavigationFragmentDirections.ActionBottomNavigationFragmentToCreateTicketFragment action = BottomNavigationFragmentDirections.actionBottomNavigationFragmentToCreateTicketFragment(ticket, true, getCurrentEvent());
+        BottomNavigationFragmentDirections.ActionBottomNavigationFragmentToCreateTicketFragment action = BottomNavigationFragmentDirections.actionBottomNavigationFragmentToCreateTicketFragment(ticket, eventManage, getCurrentEvent());
         NavHostFragment.findNavController(CreateEventFragment.this).navigate(action);
     }
     @Override

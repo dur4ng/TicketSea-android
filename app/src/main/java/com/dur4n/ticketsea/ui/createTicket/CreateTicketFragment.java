@@ -221,7 +221,7 @@ public class CreateTicketFragment extends Fragment implements CreateTicketContra
         //NavHostFragment.findNavController(this).navigateUp();
         Snackbar.make(getView(), "Ticket created successfuly", Snackbar.LENGTH_SHORT).show();
 
-        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event, eventManage);
+        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event, eventManage, "createTickets");
         NavHostFragment.findNavController(CreateTicketFragment.this).navigate(action);
     }
 
@@ -231,7 +231,7 @@ public class CreateTicketFragment extends Fragment implements CreateTicketContra
         //NavHostFragment.findNavController(this).navigateUp();
         //NavHostFragment.findNavController(this).navigate(R.id.action_createTicketFragment_to_bottomNavigationFragment);
 
-        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event, eventManage);
+        CreateTicketFragmentDirections.ActionCreateTicketFragmentToBottomNavigationFragment action = CreateTicketFragmentDirections.actionCreateTicketFragmentToBottomNavigationFragment(2, event, eventManage, "editTickets");
         //BottomNavigationFragmentDirections.ActionBottomNavigationFragmentToCreateTicketFragment action = BottomNavigationFragmentDirections.actionBottomNavigationFragmentToCreateTicketFragment(null);
         //CreateEventFragmentDirections.ActionCreateEventFragmentToCreateTicketFragment action = CreateEventFragmentDirections.actionCreateEventFragmentToCreateTicketFragment(null);
         NavHostFragment.findNavController(CreateTicketFragment.this).navigate(action);

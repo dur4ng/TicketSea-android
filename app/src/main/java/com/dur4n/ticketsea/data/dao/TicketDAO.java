@@ -25,7 +25,7 @@ public interface TicketDAO {
     @Query("DELETE FROM ticket")
     void deleteAll();
 
-    @Query("SELECT * FROM ticket ORDER BY referenceCode ASC")
+    @Query("SELECT * FROM ticket")
     List<Ticket> select();
 
     @Query("SELECT * FROM ticket WHERE eventName=:eventName")

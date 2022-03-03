@@ -13,8 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 
 import com.dur4n.ticketsea.R;
 import com.dur4n.ticketsea.data.model.Event;
@@ -76,8 +78,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder viewHolder, int position) {
         viewHolder.tvName.setText(eventList.get(position).getNombre());
-        viewHolder.tvOwnerAddress.setText(eventList.get(position).getOwnerAddress());
-        //viewHolder.tvDate.setText(eventList.get(position).getDate());
+        //viewHolder.tvOwnerAddress.setText(eventList.get(position).getOwnerAddress());
+
+        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy");
+        Date date=new Date(eventList.get(position).getDate());
+        String dateText = df2.format(date);
+        viewHolder.tvDate.setText(dateText);
+
         //viewHolder.ivPicture.setImageIcon(eventList.get(position).getPicture());
         viewHolder.tvDescription.setText(eventList.get(position).getDescription());
 

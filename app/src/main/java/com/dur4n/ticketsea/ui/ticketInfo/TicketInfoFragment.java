@@ -30,7 +30,7 @@ public class TicketInfoFragment extends Fragment {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                TicketInfoFragmentDirections.ActionTicketInfoFragmentToBottomNavigationFragment action = TicketInfoFragmentDirections.actionTicketInfoFragmentToBottomNavigationFragment(id, null, false);
+                TicketInfoFragmentDirections.ActionTicketInfoFragmentToBottomNavigationFragment action = TicketInfoFragmentDirections.actionTicketInfoFragmentToBottomNavigationFragment(id, null, false, "ticketInfo");
                 NavHostFragment.findNavController(TicketInfoFragment.this).navigate(action);
             }
         };

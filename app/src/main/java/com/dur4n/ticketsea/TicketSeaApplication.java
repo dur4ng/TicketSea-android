@@ -1,13 +1,19 @@
 package com.dur4n.ticketsea;
 
+import android.Manifest;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.pm.PackageManager;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 
 import com.dur4n.ticketsea.data.room.LocalDB;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TicketSeaApplication extends Application {
 
@@ -28,4 +34,5 @@ public class TicketSeaApplication extends Application {
         NotificationManager manager = getSystemService(NotificationManager.class);
         manager.createNotificationChannel(notificationChannel);
     }
+
 }

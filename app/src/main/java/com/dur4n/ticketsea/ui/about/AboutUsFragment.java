@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.dur4n.ticketsea.R;
 import com.dur4n.ticketsea.data.model.Ticket;
 import com.dur4n.ticketsea.databinding.FragmentAboutUsBinding;
+import com.dur4n.ticketsea.ui.BottomNavigationFragment;
 import com.dur4n.ticketsea.ui.event.EventAdapter;
 
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ public class AboutUsFragment extends Fragment implements View.OnClickListener{
 
     public static Fragment newInstance(Bundle o) {
         AboutUsFragment fragment = new AboutUsFragment();
+        BottomNavigationFragment.origin = "aboutUs";
+        BottomNavigationFragment.eventManage = false;
         if (o != null){
             fragment.setArguments(o);
         }

@@ -55,7 +55,7 @@ import java.util.ArrayList;
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                InfoEventFragmentDirections.ActionInfoEventFragmentToBottomNavigationFragment action = InfoEventFragmentDirections.actionInfoEventFragmentToBottomNavigationFragment(1, null, false);
+                InfoEventFragmentDirections.ActionInfoEventFragmentToBottomNavigationFragment action = InfoEventFragmentDirections.actionInfoEventFragmentToBottomNavigationFragment(1, null, false, "eventInfo");
                 NavHostFragment.findNavController(InfoEventFragment.this).navigate(action);
             }
         };

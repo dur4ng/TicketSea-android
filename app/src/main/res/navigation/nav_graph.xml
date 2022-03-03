@@ -118,6 +118,9 @@
         <argument
             android:name="eventManage"
             app:argType="boolean" />
+        <argument
+            android:name="origin"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

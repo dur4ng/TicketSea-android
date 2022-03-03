@@ -28,7 +28,9 @@ public class BottomNavigationFragment extends Fragment {
     Integer currentFragmentFlag = 1;
     Event currentEvent = null;
 
-    Boolean eventManage = false;
+    public static Boolean eventManage = false;
+
+    public static String origin = "";
 
     @Override
     public View onCreateView(
@@ -52,6 +54,7 @@ public class BottomNavigationFragment extends Fragment {
 
         try {
             currentFragmentFlag = BottomNavigationFragmentArgs.fromBundle(getArguments()).getChildFragmentFlag();
+
         } catch (Exception e){
             currentFragmentFlag = 1;
         }
@@ -65,14 +68,21 @@ public class BottomNavigationFragment extends Fragment {
         }catch (Exception e){
 
         }
+        try {
+            origin = BottomNavigationFragmentArgs.fromBundle(getArguments()).getOrigin();
+        } catch (Exception e){
 
+        }
+        if(origin == "eventItemView" || origin == "editTickets"){
+            eventManage = true;
+        }
         super.onStart();
         switch (currentFragmentFlag){
             case 1:
                 loadFragment(ShowCurrentEventsFragment.newInstance(null));
                 break;
             case 2:
-                    loadFragment(CreateEventFragment.newInstanceWithEvent(currentEvent, eventManage));
+                    loadFragment(CreateEventFragment.newInstanceWithEvent(currentEvent, eventManage, origin));
                 break;
             case 3:
                 loadFragment(AboutUsFragment.newInstance(null));
@@ -90,7 +100,7 @@ public class BottomNavigationFragment extends Fragment {
                     loadFragment(ShowCurrentEventsFragment.newInstance(null));
                     break;
                 case R.id.action_create_event:
-                        loadFragment(CreateEventFragment.newInstanceWithEvent(currentEvent, eventManage));
+                        loadFragment(CreateEventFragment.newInstanceWithEvent(currentEvent, eventManage, origin));
                     break;
                 case R.id.action_user_porfolio:
                     loadFragment(AboutUsFragment.newInstance(null));

@@ -25,7 +25,7 @@ public class CreateEventInteractor implements CreateEventContract.Interactor, Cr
 
     @Override
     public void delete(Ticket ticket) {
-        //TicketMockTMPRepository.getInstance().delete(listener, ticket);
+        TicketMockTMPRepository.getInstance().delete(listener, ticket);
     }
 
     @Override

@@ -74,9 +74,17 @@ Se ha implementado en los diferentes hijos de cada opción un argumento para que
 ## Implementación
 - se ha añadido la opciones de edición/borrado de eventos
 
+## Preferencias
+- exportación de tickets a json
+- exportación de tickets a csv
+- exportación de tickets a xml
+- exportación de tickets a QR
 # TODOs
-## edición/borrado eventos
-- modificar eventos rv de cada evento a navegar al createEvent fragment con un arg(evento)
-- repositorio event select from where nombreEvento=x
-- vista del createEvent databinding
-- cargar repositorio ticketTMP con los ticket del evento | vaciar cuando se salga
+## Mostrar tickets en Porfolio
+## Broadcast-Receiver
+## Implementar la fecha en creación de ticket
+
+## Crear QR de cada ticket en la exportación
+## Implementar ticket-detalle
+## Servicio que notifique cuando participe en un evento en el día actual
+## compra y venta de tickets
