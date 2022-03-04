@@ -30,6 +30,9 @@ public interface EventDAO {
     @Query("SELECT * FROM event ORDER BY nombre ASC")
     List<Event> select();
 
+    @Query("SELECT * FROM event WHERE id=:id")
+    Event getEventById(int id);
+
     @Query("SELECT * FROM event WHERE nombre=:nombre")
     Event findByName(String nombre);
 }

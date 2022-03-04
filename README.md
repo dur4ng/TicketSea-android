@@ -79,12 +79,17 @@ Se ha implementado en los diferentes hijos de cada opción un argumento para que
 - exportación de tickets a csv
 - exportación de tickets a xml
 - exportación de tickets a QR
+- gestión de permisos de escritura
+
+## BroadcastReceiver
+- creación de un work que checkea si hoy se celebra un evento que participe(que posea un ticket) y este manda por broadcast un intent con el nombre del evento (TodayEventReminderWork)
+- creación de un BroadcastReceiver que recibe intents de "TodayEventReminderWork" y crea una notificación con el nombre del evento
+
 # TODOs
-## Mostrar tickets en Porfolio
-## Broadcast-Receiver
 ## Implementar la fecha en creación de ticket
+## Mostrar tickets en Porfolio
+
 
 ## Crear QR de cada ticket en la exportación
 ## Implementar ticket-detalle
-## Servicio que notifique cuando participe en un evento en el día actual
 ## compra y venta de tickets

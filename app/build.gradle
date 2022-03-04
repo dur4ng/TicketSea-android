@@ -65,4 +65,6 @@ dependencies {
     // QR generator
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
 
+    //WorkManager
+    implementation 'androidx.work:work-runtime:2.5.0'
 }

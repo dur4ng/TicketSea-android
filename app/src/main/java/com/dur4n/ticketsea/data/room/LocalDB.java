@@ -21,7 +21,7 @@ import com.dur4n.ticketsea.data.model.Ticket;
 import com.dur4n.ticketsea.data.model.user.User;
 
 //1.Definición de la configuración de la bd
-@Database(entities = {Event.class, Ticket.class, User.class}, version = 10)
+@Database(entities = {Event.class, Ticket.class, User.class}, version = 11)
 public abstract class LocalDB extends RoomDatabase {
     // 2. Crear los métodos de obtención de los DAO.
     // (Se crea una interfaz con las etiquetas de queries para room,

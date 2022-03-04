@@ -12,6 +12,7 @@ import com.dur4n.ticketsea.ui.event.ShowCurrentEventsContract;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -48,6 +49,29 @@ public class EventLocalRepository implements ShowCurrentEventsContract.Repositor
     public void add(Event newEvent){
 
         lista.add(newEvent);
+    }
+    public List<Event> getList() {
+        List<Event> eventList = null;
+        try {
+            eventList = LocalDB.databaseWriteExecutor.submit(() -> eventDAO.select()).get();
+        } catch (ExecutionException e) {
+            eventList = new ArrayList<>();
+        } catch (InterruptedException e) {
+            eventList = new ArrayList<>();
+        }
+
+        return eventList;
+    }
+
+    public Event getEventById(Integer id) {
+        Event event = null;
+        try {
+            event = LocalDB.databaseWriteExecutor.submit(() -> eventDAO.getEventById(id)).get();
+        } catch (Exception e) {
+            event = null;
+        }
+
+        return event;
     }
 
     @Override
